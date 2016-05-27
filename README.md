@@ -7,14 +7,23 @@ Habilitar repositorio EPEL:
   $ sudo yum -y install epel-release
   
 Instalacion de MySQL:
+
   $ sudo yum -y install mysql-client mysql-devel
+  
   $ sudo mysql_secure_installation
+  
   $ mysql -u root -p
+  
   $ CREATE DATABASE sistemaInventarioCTI;
+  
   $ CREATE USER 'usuario'@'localhost' IDENTIFIED BY 'clave';
+  
   $ GRANT ALL ON sistemaInventarioCTI.* TO 'usuario';
+  
   $ CREATE USER 'usuarioweb'@'localhost' IDENTIFIED BY 'webclave';
+  
   $ GRANT SELECT,INSERT,UPDATE,DELETE ON  sistemaInventarioCTI.* TO 'usuarioweb';
+  
   $ exit;
   
 Instalacion de Python 3:
@@ -40,7 +49,7 @@ Instalacion de virtualenv y virtualenvwrapper:
   
 Instalar Git:
   $ sudo yum -y install git
-
+  
 Instalar GCC:
   $ sudo yum -y install gcc
 Clonar repositorio:
