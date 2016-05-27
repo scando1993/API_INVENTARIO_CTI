@@ -5,6 +5,7 @@ Instalación CentOS 7:
 
 Habilitar repositorio EPEL:
   $ sudo yum -y install epel-release
+  
 Instalacion de MySQL:
   $ sudo yum -y install mysql-client mysql-devel
   $ sudo mysql_secure_installation
