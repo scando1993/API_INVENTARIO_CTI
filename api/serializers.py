@@ -1,5 +1,5 @@
 from django.contrib.auth.models import User, Group
-from .models import Item, Kit
+from .models import Item, Kit, Prestamo
 from rest_framework import serializers
 
 
@@ -23,4 +23,9 @@ class KitSerializer(serializers.HyperlinkedModelSerializer):
 class ItemSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Item
+        fields = '__all__'
+
+class PrestamoSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Prestamo
         fields = '__all__'

@@ -36,4 +36,11 @@ class ItemViewSet(viewsets.ModelViewSet):
     """
     queryset = Item.objects.all().order_by('nombre')
     serializer_class = ItemSerializer
+
+class PrestamoViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Prestamo.objects.all().order_by('fechaCreacion')
+    serializer_class = PrestamoSerializer
 # Create your views here.

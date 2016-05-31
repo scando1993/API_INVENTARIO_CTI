@@ -8,6 +8,7 @@ router.register(r'users', views.UserViewSet)
 router.register(r'groups', views.GroupViewSet)
 router.register(r'items', views.ItemViewSet)
 router.register(r'kits', views.KitViewSet)
+router.register(r'prestamos', views.PrestamoViewSet)
 
 
 urlpatterns = [
