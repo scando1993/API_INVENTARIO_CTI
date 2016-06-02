@@ -18,4 +18,4 @@ before_install:
 services:
   - mysql
 
-script: python3 manage.py run test
+script: python3 manage.py  test
