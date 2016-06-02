@@ -41,7 +41,7 @@ class Prestamo(models.Model):
     fechaActualizacion= models.DateTimeField(null=True)
     item = models.ForeignKey(Item,null=True)
     kit = models.ForeignKey(Kit,null=True)
-    user = models.ForeignKey(User)
+    usua = models.ForeignKey(User, related_name='usuario')
 
     class Meta:
         ordering = ('nombre',)

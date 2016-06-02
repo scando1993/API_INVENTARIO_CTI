@@ -83,6 +83,9 @@ DATABASES = {
         'PASSWORD': '9090pineapple',
         'HOST': '162.243.83.72',
         'PORT': '3306',
+        'OPTIONS': {
+           "init_command": "SET storage_engine=MYISAM",
+    }  
     }
 }
 
