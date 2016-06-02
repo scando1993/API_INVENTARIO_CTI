@@ -34,19 +34,19 @@ class Item(models.Model):
 
 @python_2_unicode_compatible
 class Prestamo(models.Model):
-    idPrestamo= models.IntegerField(max_length=10)
+    #no se necista id, django crea el id por defecto
     nombre = models.CharField(max_length=20)
     descripcion = models.CharField(max_length=50,null=True)
     fechaCreacion= models.DateTimeField(null=True)
     fechaActualizacion= models.DateTimeField(null=True)
     item = models.ForeignKey(Item,null=True)
     kit = models.ForeignKey(Kit,null=True)
-    #user = models.ForeignKey(User, related_name= 'usuarios')
+    user = models.ForeignKey(User)
 
     class Meta:
-        ordering = ('fechaCreacion',)
+        ordering = ('nombre',)
     def __str__(self):
-        return self.fechaCreacion
+        return self.nombre
 
 
 # Create your models here.
