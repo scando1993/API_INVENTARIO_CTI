@@ -32,8 +32,7 @@ rvm:
 
 env:
   - DB=sqlite
-  - DB=mysql
-  - DB=postgresql
+  #- DB=mysql
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
