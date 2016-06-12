@@ -16,8 +16,8 @@ bundler_args: --without test --jobs 3 --retry 3
 
 before_install:
   - rvm @global do gem uninstall bundler --all --ignore-dependencies --executables
-  - rvm @global do gem install bundler -v '1.11.2'
-  - bundle --version
+  - rvm @global do gem install bundler
+  - bundle install
   - "rm ${BUNDLE_GEMFILE}.lock"
 
 before_script:
