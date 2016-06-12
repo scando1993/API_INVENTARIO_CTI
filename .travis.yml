@@ -34,7 +34,6 @@ env:
   - DB=sqlite
   #- DB=mysql
 script:
-  - rake db:migrate
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake db:test:prepare
 
