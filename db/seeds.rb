@@ -37,7 +37,18 @@ Kit.destroy_all
 								value: Faker::Number.decimal(2,3).to_i
 	})
 end
-
+50.times do |i|
+	kit=Kit.create!({title: Faker::Commerce.product_name,
+									 number_elements:Faker::Number.between(1,100).to_i,
+									 code:Faker::Lorem.characters(6),
+									 kit_type: ["desarrollo","prueba"].sample(),
+									 state: ["nuevo","usado"].sample(),
+									 reference: Faker::Lorem.sentence,
+									 domain: Faker::Educator.university,
+									 purpose: Faker::Lorem.paragraph,
+									 serie: Faker::Lorem.characters(7)
+									})
+end
 owners_name = ["ESPOL","CTI","SENESCYT"]
 
 owners_name.length.times {|i|
@@ -46,26 +57,19 @@ owners_name.length.times {|i|
 
 owners = Owner.all
 items = Item.all
+kits = Kit.all
 
-50.times do |i|
-	 kit=Kit.create!({title: Faker::Commerce.product_name,
-							 number_elements:Faker::Number.between(1,100).to_i,
-							 code:Faker::Lorem.characters(6),
-               kit_type: ["desarrollo","prueba"].sample(),
-               state: ["nuevo","usado"].sample(),
-               reference: Faker::Lorem.sentence,
-               domain: Faker::Educator.university,
-               purpose: Faker::Lorem.paragraph,
-               serie: Faker::Lorem.characters(7)
-	             })
-
-	 Faker::Number.number(2).to_i.times{ |i|
-		 kit.kit_comments.create!( comments:Faker::Hipster.sentence)
-		 kit.items<<items.sample
-		 kit.owners<<owners.sample
-		 kit.save!
-	 }
-
-end
-
-
+Faker::Number.between(50,100).to_i.times{
+  Faker::Number.number(2).to_i.times{ |i|
+    kit = kits.sample
+    kit.kit_comments.create!( comments:Faker::Hipster.sentence)
+    #kit.items<<items.sample
+    KitItem.create!( kit:kit, item: items.sample, quantity: Faker::Number.number(1).to_i)
+    KitComponent.create!( kit:kit, kitComponent: kits.sample,item:items.sample, quantity: Faker::Number.number(1).to_i)
+    kit.owners<<owners.sample
+    kit.save!
+  }
+  Faker::Number.number(2).to_i.times{|i|
+    ItemComponent.create!( item:items.sample,item_component:items.sample quantity: Faker::Number.number(1).to_i)
+  }
+}
