@@ -34,8 +34,10 @@ env:
   - DB=sqlite
   #- DB=mysql
 script:
+  - RAILS_ENV=test bundle exec rake db:drop
   - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
+  - bundle exec rspec spec/controllers/items_controller_spec.rb --color --require spec_helper --require rails_helper
+  - bundle exec rspec spec/controllers/kits_controller_spec.rb --color --require spec_helper --require rails_helper
 
 
 
