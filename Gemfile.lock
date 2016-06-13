@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/rails/rails-controller-testing
+  revision: b3822d28caf10f7bf44d9e06e268b193b7f260b5
+  specs:
+    rails-controller-testing (0.1.1)
+      actionpack (~> 5.x)
+      actionview (~> 5.x)
+      activesupport (~> 5.x)
+
+GIT
   remote: https://github.com/stympy/faker.git
   revision: b05809e3839016d42e4d40bc4a28ac25326fe03a
   specs:
@@ -153,22 +162,23 @@ GEM
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)
     redis (3.3.0)
-    rspec-core (3.1.7)
-      rspec-support (~> 3.1.0)
-    rspec-expectations (3.1.2)
+    rspec-core (3.5.0.beta1)
+      rspec-support (= 3.5.0.beta1)
+    rspec-expectations (3.5.0.beta1)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.1.0)
-    rspec-mocks (3.1.3)
-      rspec-support (~> 3.1.0)
-    rspec-rails (3.1.0)
+      rspec-support (= 3.5.0.beta1)
+    rspec-mocks (3.5.0.beta1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.5.0.beta1)
+    rspec-rails (3.5.0.beta1)
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       railties (>= 3.0)
-      rspec-core (~> 3.1.0)
-      rspec-expectations (~> 3.1.0)
-      rspec-mocks (~> 3.1.0)
-      rspec-support (~> 3.1.0)
-    rspec-support (3.1.2)
+      rspec-core (= 3.5.0.beta1)
+      rspec-expectations (= 3.5.0.beta1)
+      rspec-mocks (= 3.5.0.beta1)
+      rspec-support (= 3.5.0.beta1)
+    rspec-support (3.5.0.beta1)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     sidekiq (4.1.2)
@@ -223,8 +233,9 @@ DEPENDENCIES
   mysql2
   puma (~> 3.0)
   rails (>= 5.0.0.rc1, < 5.1)
+  rails-controller-testing!
   redis (~> 3.0)
-  rspec-rails
+  rspec-rails (= 3.5.0.beta1)
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -233,4 +244,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.12.5

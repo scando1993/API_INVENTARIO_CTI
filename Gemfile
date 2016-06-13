@@ -30,7 +30,9 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 
-  gem 'rspec-rails'
+  gem "rails-controller-testing", :git => "https://github.com/rails/rails-controller-testing"
+  gem "rspec-rails", "3.5.0.beta1"
+
   gem 'faker', :git => "https://github.com/stympy/faker.git"
 
 end

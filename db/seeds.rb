@@ -70,6 +70,7 @@ Faker::Number.between(10,20).to_i.times{
     kit.save!
   }
   Faker::Number.number(1).to_i.times{|i|
-    ItemComponent.create!( item:items.sample,item_component:items.sample, quantity: Faker::Number.number(1).to_i )
+    item = items.sample
+    ItemComponent.create!( item:item,item_component:items.sample, quantity: Faker::Number.number(1).to_i )
   }
 }
