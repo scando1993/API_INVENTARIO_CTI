@@ -11,13 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160605180337) do
+ActiveRecord::Schema.define(version: 20160613080049) do
 
   create_table "groups", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "item_components", force: :cascade do |t|
+    t.integer  "item_id"
+    t.integer  "item_component_id"
+    t.integer  "quantity"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.index ["item_component_id"], name: "index_item_components_on_item_component_id"
+    t.index ["item_id"], name: "index_item_components_on_item_id"
   end
 
   create_table "items", force: :cascade do |t|
@@ -36,15 +46,10 @@ ActiveRecord::Schema.define(version: 20160605180337) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "items_kits", id: false, force: :cascade do |t|
-    t.integer "kit_id",  null: false
-    t.integer "item_id", null: false
-    t.index ["kit_id", "item_id"], name: "index_items_kits_on_kit_id_and_item_id"
-  end
-
   create_table "items_owners", id: false, force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "item_id",  null: false
+    t.index ["item_id", "owner_id"], name: "index_items_owners_on_item_id_and_owner_id"
     t.index ["owner_id", "item_id"], name: "index_items_owners_on_owner_id_and_item_id"
   end
 
@@ -54,6 +59,26 @@ ActiveRecord::Schema.define(version: 20160605180337) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["kit_id"], name: "index_kit_comments_on_kit_id"
+  end
+
+  create_table "kit_components", force: :cascade do |t|
+    t.integer  "kit_id"
+    t.integer  "kitComponent_id"
+    t.integer  "quantity"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["kitComponent_id"], name: "index_kit_components_on_kitComponent_id"
+    t.index ["kit_id"], name: "index_kit_components_on_kit_id"
+  end
+
+  create_table "kit_items", force: :cascade do |t|
+    t.integer  "kit_id"
+    t.integer  "item_id"
+    t.integer  "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_kit_items_on_item_id"
+    t.index ["kit_id"], name: "index_kit_items_on_kit_id"
   end
 
   create_table "kits", force: :cascade do |t|
@@ -76,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160605180337) do
   create_table "kits_owners", id: false, force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "kit_id",   null: false
+    t.index ["kit_id", "owner_id"], name: "index_kits_owners_on_kit_id_and_owner_id"
     t.index ["owner_id", "kit_id"], name: "index_kits_owners_on_owner_id_and_kit_id"
   end
 

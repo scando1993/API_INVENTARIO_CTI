@@ -1,8 +1,12 @@
 class Kit < ApplicationRecord
 
-	has_many :items, :through => :kit_items
+	has_many :items, :through => :kit_items, source: :item
 
-	has_many :kits, :through => :kit_components
+	has_many :kits, :through => :kit_components, source: :kit_component
+
+	has_many :kit_components
+
+  has_many :kit_items
 
 	has_many :kit_comments, dependent: :destroy
 
