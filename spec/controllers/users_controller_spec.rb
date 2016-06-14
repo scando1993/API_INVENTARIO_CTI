@@ -23,12 +23,29 @@ RSpec.describe UsersController, :type => :controller do
   # This should return the minimal set of attributes required to create a valid
   # User. As you add validations to User, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+  let(:valid_attributes) {{firstname: Faker::Name.first_name,
+                           lastname: Faker::Name.last_name,
+                           username: Faker::Internet.user_name,
+                           password_digest: Faker::Internet.password,
+                           email: Faker::Internet.email,
+                           function: "function-#{+1}",
+                           phone: Faker::PhoneNumber.phone_number,
+                           gender: ["Male","Female"].sample(),
+                           cellphone: Faker::PhoneNumber.cell_phone
+  }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {firstname: Faker::Name.first_name.to_i,
+     lastname: Faker::Name.last_name.to_i,
+     username: Faker::Internet.user_name.to_i,
+     password_digest: Faker::Internet.password.to_i,
+     email: Faker::Internet.email.to_i,
+     function: "function-#{+1}".to_i,
+     phone: Faker::PhoneNumber.phone_number.to_i,
+     gender: ["Male","Female"].sample().to_i,
+     cellphone: Faker::PhoneNumber.cell_phone.to_i
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -39,7 +56,7 @@ RSpec.describe UsersController, :type => :controller do
   describe "GET index" do
     it "assigns all users as @users" do
       user = User.create! valid_attributes
-      get :index, {}, valid_session
+      get :index, format: 'json'
       expect(assigns(:users)).to eq([user])
     end
   end
@@ -47,7 +64,7 @@ RSpec.describe UsersController, :type => :controller do
   describe "GET show" do
     it "assigns the requested user as @user" do
       user = User.create! valid_attributes
-      get :show, {:id => user.to_param}, valid_session
+      get :show, {:id => user.to_param}, valid_session, format: 'json'
       expect(assigns(:user)).to eq(user)
     end
   end
