@@ -21,7 +21,7 @@ class KitsController < ApplicationController
     @kit = Kit.new(kit_params)
 
     if @kit.save!
-      render :show
+      render json: @kit
     else
       render json: @kit.errors, status: :unprocessable_entity
     end
