@@ -24,15 +24,17 @@ RSpec.describe KitsController, :type => :controller do
   # Kit. As you add validations to Kit, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    {title: Faker::Commerce.product_name,
-     number_elements:Faker::Number.between(1,100).to_i,
-     code:Faker::Lorem.characters(6),
-     kit_type: ["desarrollo","prueba"].sample(),
-     state: ["nuevo","usado"].sample(),
-     reference: Faker::Lorem.sentence,
-     domain: Faker::Educator.university,
-     purpose: Faker::Lorem.paragraph,
-     serie: Faker::Lorem.characters(7)}
+    {
+        title: Faker::Commerce.product_name,
+        number_elements:Faker::Number.between(1,100).to_i,
+        code:Faker::Lorem.characters(6),
+        kit_type: ["desarrollo","prueba"].sample(),
+        state: ["nuevo","usado"].sample(),
+        reference: Faker::Lorem.sentence,
+        domain: Faker::Educator.university,
+        purpose: Faker::Lorem.paragraph,
+        serie: Faker::Lorem.characters(7)
+    }
   }
 
   let(:invalid_attributes) {
@@ -47,7 +49,7 @@ RSpec.describe KitsController, :type => :controller do
   describe "GET index" do
     it "assigns all kits as @kits" do
       kit = Kit.create! valid_attributes
-      get :index, {:format => :json}
+      get :index, format: 'json'
       expect(assigns(:kits)).to eq([kit])
     end
   end
@@ -55,14 +57,14 @@ RSpec.describe KitsController, :type => :controller do
   describe "GET show" do
     it "assigns the requested kit as @kit" do
       kit = Kit.create! valid_attributes
-      get :show,{:format => :json}, {:id => kit.to_param}, valid_session
+      get :show, {:id => kit.to_param}, valid_session, format: 'json'
       expect(assigns(:kit)).to eq(kit)
     end
   end
 
   describe "GET new" do
     it "assigns a new kit as @kit" do
-      get :new, valid_session, {:format => :json}
+      get :new, valid_session, format: 'json'
       expect(assigns(:kit)).to be_a_new(Kit)
     end
   end
@@ -70,7 +72,7 @@ RSpec.describe KitsController, :type => :controller do
   describe "GET edit" do
     it "assigns the requested kit as @kit" do
       kit = Kit.create! valid_attributes
-      get :edit, {:id => kit.to_param}, valid_session, {:format => :json}
+      get :edit, {:id => kit.to_param}, valid_session, format: 'json'
       expect(assigns(:kit)).to eq(kit)
     end
   end
