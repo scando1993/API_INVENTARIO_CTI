@@ -76,7 +76,7 @@ RSpec.describe KitsController, :type => :controller do
     describe "with valid params" do
       it "creates a new Kit" do
         expect {
-          post :create, {:kit => valid_attributes}, valid_session, {:format => :json}
+          post :create, {:kit => valid_attributes}, valid_session, format: 'json'
         }.to change(Kit, :count).by(1)
       end
 
