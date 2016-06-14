@@ -5,11 +5,14 @@ class KitsController < ApplicationController
   # GET /kits.json
   def index
     @kits = Kit.all
+    render json: @kits
   end
 
   # GET /kits/1
   # GET /kits/1.json
   def show
+    @kit = Kit.find(params[:id])
+    render json: @kit
   end
 
   # POST /kits
@@ -17,7 +20,7 @@ class KitsController < ApplicationController
   def create
     @kit = Kit.new(kit_params)
 
-    if @kit.save
+    if @kit.save!
       render :show
     else
       render json: @kit.errors, status: :unprocessable_entity
@@ -27,7 +30,7 @@ class KitsController < ApplicationController
   # PATCH/PUT /kits/1
   # PATCH/PUT /kits/1.json
   def update
-    if @kit.update(kit_params)
+    if @kit.update!(kit_params)
       render :show, status: :ok, location: @kit
     else
       render json: @kit.errors, status: :unprocessable_entity

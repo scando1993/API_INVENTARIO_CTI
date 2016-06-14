@@ -38,7 +38,17 @@ RSpec.describe KitsController, :type => :controller do
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+        title: Faker::Commerce.product_name.to_i,
+        number_elements:Faker::Number.between(1,100),
+        code:Faker::Lorem.characters(6).to_i,
+        kit_type: ["desarrollo","prueba"].sample().to_i,
+        state: ["nuevo","usado"].sample().to_i,
+        reference: Faker::Lorem.sentence.to_i,
+        domain: Faker::Educator.university.to_i,
+        purpose: Faker::Lorem.paragraph.to_i,
+        serie: Faker::Lorem.characters(7).to_i
+    }
   }
 
   # This should return the minimal set of values that should be in the session
@@ -58,21 +68,6 @@ RSpec.describe KitsController, :type => :controller do
     it "assigns the requested kit as @kit" do
       kit = Kit.create! valid_attributes
       get :show, {:id => kit.to_param}, valid_session, format: 'json'
-      expect(assigns(:kit)).to eq(kit)
-    end
-  end
-
-  describe "GET new" do
-    it "assigns a new kit as @kit" do
-      get :new, valid_session, format: 'json'
-      expect(assigns(:kit)).to be_a_new(Kit)
-    end
-  end
-
-  describe "GET edit" do
-    it "assigns the requested kit as @kit" do
-      kit = Kit.create! valid_attributes
-      get :edit, {:id => kit.to_param}, valid_session, format: 'json'
       expect(assigns(:kit)).to eq(kit)
     end
   end
