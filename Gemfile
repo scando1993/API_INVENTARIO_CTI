@@ -20,6 +20,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'capistrano-rails', group: :development
 
 gem 'active_model_serializers'
+
+gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler"
+
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
@@ -31,7 +34,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 
-  gem "rails-controller-testing", :git => "https://github.com/rails/rails-controller-testing"
+  gem 'rails-controller-testing', :git => "https://github.com/rails/rails-controller-testing"
   gem "rspec-rails", "3.5.0.beta1"
 
   gem 'faker', :git => "https://github.com/stympy/faker.git"
