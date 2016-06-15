@@ -32,7 +32,6 @@ RSpec.describe KitsController, :type => :controller do
         state: ["nuevo","usado"].sample(),
         reference: Faker::Lorem.sentence,
         domain: Faker::Educator.university,
-        purpose: Faker::Lorem.paragraph,
         serie: Faker::Lorem.characters(7)
     }
   }
@@ -46,7 +45,6 @@ RSpec.describe KitsController, :type => :controller do
         state: ["nuevo","usado"].sample().to_i,
         reference: Faker::Lorem.sentence.to_i,
         domain: Faker::Educator.university.to_i,
-        purpose: Faker::Lorem.paragraph.to_i,
         serie: Faker::Lorem.characters(7).to_i
     }
   }

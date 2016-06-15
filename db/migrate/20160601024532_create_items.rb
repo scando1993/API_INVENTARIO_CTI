@@ -7,7 +7,7 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :state
       t.string :reference
       t.string :domain
-      t.string :characteristics
+      t.string :description
       t.string :mac
       t.string :serie
       t.integer :quantity

@@ -30,7 +30,7 @@ Kit.destroy_all
 								state: ["nuevo","usado"].sample(),
 								reference: Faker::Lorem.sentence,
 	              domain: Faker::Commerce.department,
-	              characteristics: Faker::Lorem.paragraph,
+	              description: Faker::Lorem.paragraph,
                 mac: item_type=="dispositivo"?Faker::Lorem.characters(10):nil,
 								serie: item_type=="dispositivo"?Faker::Lorem.characters(5):nil,
 								quantity:Faker::Number.between(1,100).to_i,
@@ -45,7 +45,6 @@ end
 									 state: ["nuevo","usado"].sample(),
 									 reference: Faker::Lorem.sentence,
 									 domain: Faker::Educator.university,
-									 purpose: Faker::Lorem.paragraph,
 									 serie: Faker::Lorem.characters(7)
 									})
 end

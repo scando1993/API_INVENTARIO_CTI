@@ -37,13 +37,13 @@ ActiveRecord::Schema.define(version: 20160613080049) do
     t.string   "state"
     t.string   "reference"
     t.string   "domain"
-    t.string   "characteristics"
+    t.string   "description"
     t.string   "mac"
     t.string   "serie"
     t.integer  "quantity"
     t.float    "value"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "items_owners", id: false, force: :cascade do |t|
@@ -84,18 +84,15 @@ ActiveRecord::Schema.define(version: 20160613080049) do
   create_table "kits", force: :cascade do |t|
     t.string   "title"
     t.integer  "number_elements"
+    t.string   "serie"
     t.string   "code"
     t.string   "kit_type"
     t.string   "state"
     t.string   "reference"
     t.string   "domain"
-    t.string   "purpose"
     t.string   "comments"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "item_id"
-    t.string   "serie"
-    t.index ["item_id"], name: "index_kits_on_item_id"
   end
 
   create_table "kits_owners", id: false, force: :cascade do |t|
