@@ -1,5 +1,5 @@
 class KitSerializer < ActiveModel::Serializer
-  attributes :id, :title,:number_elements,:code,:kit_type,:state,:reference,:domain,:purpose,:serie
+  attributes :id, :title,:number_elements,:code,:kit_type,:state,:reference,:domain,:serie
 
   has_many :items, :through => :kit_items, source: :item
 
