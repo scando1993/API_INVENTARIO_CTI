@@ -21,7 +21,7 @@ gem 'capistrano-rails', group: :development
 
 gem 'active_model_serializers'
 
-gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler", group: :production
+#gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler", group: :production
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
