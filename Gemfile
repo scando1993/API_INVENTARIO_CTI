@@ -21,10 +21,11 @@ gem 'capistrano-rails', group: :development
 
 gem 'active_model_serializers'
 
+gem 'faker', :git => "https://github.com/stympy/faker.git"
 #gem 'passenger', ">= 5.0.25", require: "phusion_passenger/rack_handler", group: :production
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'rack-cors'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -37,7 +38,7 @@ group :development, :test do
   gem 'rails-controller-testing', :git => "https://github.com/rails/rails-controller-testing"
   gem "rspec-rails", "3.5.0.beta1"
 
-  gem 'faker', :git => "https://github.com/stympy/faker.git"
+#  gem 'faker', :git => "https://github.com/stympy/faker.git"
 
 end
 
@@ -50,6 +51,10 @@ group :development do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-sidekiq'
+  gem 'capistrano-puma', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
   gem 'web-console', '~> 2.0'
 end
 
