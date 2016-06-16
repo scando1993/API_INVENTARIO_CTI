@@ -77,9 +77,14 @@ GEM
       capistrano (~> 3.1)
       sshkit (~> 1.2)
     capistrano-harrow (0.5.1)
+    capistrano-puma (0.2.3)
+      capistrano (>= 3.0)
     capistrano-rails (1.1.6)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
     capistrano-sidekiq (0.5.4)
       capistrano
       sidekiq (>= 3.4)
@@ -133,6 +138,7 @@ GEM
     puma (3.4.0)
     rack (2.0.0.rc1)
       json
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (5.0.0.rc1)
@@ -227,7 +233,9 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   capistrano-bundler
+  capistrano-puma
   capistrano-rails
+  capistrano-rvm (~> 0.1)
   capistrano-sidekiq
   capybara
   database_cleaner
@@ -237,6 +245,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mysql2
   puma (~> 3.0)
+  rack-cors
   rails (>= 5.0.0.rc1, < 5.1)
   rails-controller-testing!
   redis (~> 3.0)
