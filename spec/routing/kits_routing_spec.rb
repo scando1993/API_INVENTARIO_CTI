@@ -7,16 +7,8 @@ RSpec.describe KitsController, :type => :routing do
       expect(:get => "/kits").to route_to("kits#index")
     end
 
-    it "routes to #new" do
-      expect(:get => "/kits/new").to route_to("kits#new")
-    end
-
     it "routes to #show" do
       expect(:get => "/kits/1").to route_to("kits#show", :id => "1")
-    end
-
-    it "routes to #edit" do
-      expect(:get => "/kits/1/edit").to route_to("kits#edit", :id => "1")
     end
 
     it "routes to #create" do
