@@ -27,6 +27,13 @@ gem 'faker', :git => "https://github.com/stympy/faker.git"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem 'rack-cors'
 
+
+gem 'devise'
+# Token based authentication for Rails JSON APIs
+gem 'devise_token_auth'
+# required for devise_token_auth
+gem 'omniauth'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
