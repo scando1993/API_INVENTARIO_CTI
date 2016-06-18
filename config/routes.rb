@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount_devise_token_auth_for 'User', at: 'auth'
+  devise_for :users
   resources :people
   resources :items
   resources :loans
@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :kits
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-	root 'kits#index'
+  root 'kits#index'
+
+  mount_devise_token_auth_for 'User', at: 'auth'
+
 end

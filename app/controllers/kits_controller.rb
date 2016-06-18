@@ -51,6 +51,6 @@ class KitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def kit_params
-      params.fetch(:kit, {})
+      params.permit :id, :title,:number_elements,:code,:kit_type,:state,:reference,:domain,:serie
     end
 end
