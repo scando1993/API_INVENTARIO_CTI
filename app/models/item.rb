@@ -7,5 +7,5 @@ class Item < ApplicationRecord
 	has_many :item_components
 
 	has_and_belongs_to_many :owners
-
+	scope :title_item, -> (titleID){ where title: titleID }
 end
