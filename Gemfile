@@ -42,6 +42,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 
+  gem 'rspec-api_helpers', github: 'kollegorna/rspec-api_helpers'
   gem 'rails-controller-testing', :git => "https://github.com/rails/rails-controller-testing"
   gem "rspec-rails", "3.5.0.beta1"
 

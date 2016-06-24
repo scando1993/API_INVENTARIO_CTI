@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/kollegorna/rspec-api_helpers.git
+  revision: 6e18952d64cc07edbfe7f9a9b66963220b2161bc
+  specs:
+    rspec-api_helpers (0.2.1)
+
+GIT
   remote: https://github.com/rails/rails-controller-testing
   revision: b3822d28caf10f7bf44d9e06e268b193b7f260b5
   specs:
@@ -270,6 +276,7 @@ DEPENDENCIES
   rails (>= 5.0.0.rc1, < 5.1)
   rails-controller-testing!
   redis (~> 3.0)
+  rspec-api_helpers!
   rspec-rails (= 3.5.0.beta1)
   shoulda-matchers
   spring

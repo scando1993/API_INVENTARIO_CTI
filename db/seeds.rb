@@ -13,8 +13,6 @@ Kit.destroy_all
 100.times do |i|
 	Person.create!({firstname: Faker::Name.first_name,
 	                      lastname: Faker::Name.last_name,
-												username: Faker::Internet.user_name,
-												password_digest: Faker::Internet.password,
 												email: Faker::Internet.email,
 												function: "function-#{i+1}",
 												phone: Faker::PhoneNumber.phone_number,

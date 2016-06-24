@@ -1,5 +1,6 @@
 class KitsController < ApplicationController
   before_action :set_kit, only: [:show, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /kits
   # GET /kits.json
