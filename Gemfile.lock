@@ -1,4 +1,13 @@
 GIT
+  remote: git://github.com/lynndylanhurley/devise_token_auth.git
+  revision: 572e9b161fe821537597b1f938c394f405b15f1a
+  branch: master
+  specs:
+    devise_token_auth (0.1.37)
+      devise (> 3.5.2, <= 4.1.1)
+      rails (< 6)
+
+GIT
   remote: https://github.com/rails/rails-controller-testing
   revision: b3822d28caf10f7bf44d9e06e268b193b7f260b5
   specs:
@@ -105,9 +114,6 @@ GEM
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
-    devise_token_auth (0.1.37)
-      devise (> 3.5.2, < 4.1)
-      rails (< 6)
     diff-lcs (1.2.5)
     erubis (2.7.0)
     factory_girl (4.7.0)
@@ -258,7 +264,7 @@ DEPENDENCIES
   capybara
   database_cleaner
   devise
-  devise_token_auth
+  devise_token_auth!
   factory_girl_rails
   faker!
   jbuilder (~> 2.0)

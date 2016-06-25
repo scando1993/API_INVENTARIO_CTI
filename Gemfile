@@ -30,7 +30,7 @@ gem 'rack-cors'
 
 gem 'devise'
 # Token based authentication for Rails JSON APIs
-gem 'devise_token_auth'
+gem 'devise_token_auth', github:"lynndylanhurley/devise_token_auth", branch: "master"
 # required for devise_token_auth
 gem 'omniauth'
 
