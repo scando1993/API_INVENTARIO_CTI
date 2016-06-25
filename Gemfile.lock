@@ -1,4 +1,10 @@
 GIT
+  remote: git://github.com/kollegorna/rspec-api_helpers.git
+  revision: 6e18952d64cc07edbfe7f9a9b66963220b2161bc
+  specs:
+    rspec-api_helpers (0.2.1)
+
+GIT
   remote: git://github.com/lynndylanhurley/devise_token_auth.git
   revision: 572e9b161fe821537597b1f938c394f405b15f1a
   branch: master
@@ -276,6 +282,7 @@ DEPENDENCIES
   rails (>= 5.0.0.rc1, < 5.1)
   rails-controller-testing!
   redis (~> 3.0)
+  rspec-api_helpers!
   rspec-rails (= 3.5.0.beta1)
   shoulda-matchers
   spring
