@@ -71,3 +71,5 @@ Faker::Number.between(10,20).to_i.times{
     ItemComponent.create!( item:item,item_component:items.sample, quantity: Faker::Number.number(1).to_i )
   }
 }
+
+User.create!(email: "prueba@prueba.com", password:"prueba1234",confirmed_at:Date.today)
