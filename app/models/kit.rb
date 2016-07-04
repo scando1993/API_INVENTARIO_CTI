@@ -14,5 +14,6 @@ class Kit < ApplicationRecord
 
 	scope :title_kit, -> (titleID){ where title: titleID }
 
+	audited
 
 end
