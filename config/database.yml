@@ -25,6 +25,7 @@ production:
   encoding: utf8
   reconnect: false
   pool: 5
+  database: sistemaInventarioCTI
   username: CTI-API
   password: sistemaInventarioCTI-API
   socket: /var/lib/mysql/mysql.sock
