@@ -66,7 +66,9 @@ group :development, :test do
 
   gem "rspec-rails", "3.5.0.beta1"
 
+  gem "rubocop", require: "false"
 #  gem 'faker', :git => "https://github.com/stympy/faker.git"
+  gem 'database_cleaner'
 
 end
 
