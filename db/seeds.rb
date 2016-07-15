@@ -8,7 +8,7 @@
 Person.destroy_all
 Item.destroy_all
 Kit.destroy_all
-
+User.destroy_all
 
 100.times do |i|
 	Person.create!({firstname: Faker::Name.first_name,

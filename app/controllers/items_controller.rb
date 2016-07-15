@@ -2,10 +2,13 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :update, :destroy]
   before_action :authenticate_user!
 
+  respond_to :json
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
+    # render 'items/index'
+    render @items, status: :ok, formats: [:json]
   end
 
 
@@ -13,7 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/1.json
   def show
     @item = Item.find(params[:id])
-    render json: @item
+    render @item
   end
 
   # POST /items
