@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'puma', '>= 3.0'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-gem 'jbuilder', '~> 2.0'
+# gem 'jbuilder', '~> 2.0'
 
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 3.0'
@@ -21,7 +21,7 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 gem 'capistrano-rails', group: :development
 
-gem 'active_model_serializers', '~> 0.10.0.rc4', '< 0.10.0.rc5'
+# gem 'active_model_serializers', '~> 0.10.0.rc4', '< 0.10.0.rc5'
 
 gem 'faker', :git => "https://github.com/stympy/faker.git"
 
@@ -51,6 +51,9 @@ gem 'versioncake', github: 'bwillis/versioncake'
 
 # Manage resources for different response types
 gem 'rabl'
+gem 'rabl-rails', github: 'ccocchi/rabl-rails', branch: '0.5.x'
+
+gem 'multi_json', :git => 'https://github.com/intridea/multi_json.git'
 
 # Optimize the json parser
 gem 'oj'
@@ -58,19 +61,24 @@ gem 'oj_mimic_json'
 gem 'yajl-ruby', require: 'yajl'
 
 # Rendering REST documents
-gem 'roar-rails'
-gem 'responders'
+# gem 'roar-rails'
+# gem 'responders'
 
-# Add admin page for development
-gem 'activeadmin', github: 'activeadmin'
+# Serialization types gems
+gem 'bson'
+gem 'plist'
+gem 'msgpack'
 
-gem 'ransack',    github: 'activerecord-hackery/ransack'
-gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
-gem 'formtastic', github: 'justinfrench/formtastic'
-gem 'draper',     github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587'
+# # Add admin page for development
+# gem 'activeadmin', github: 'activeadmin'
+#
+# gem 'ransack',    github: 'activerecord-hackery/ransack'
+# gem 'kaminari',   github: 'amatsuda/kaminari', branch: '0-17-stable'
+# gem 'formtastic', github: 'justinfrench/formtastic'
+# gem 'draper',     github: 'audionerd/draper', branch: 'rails5', ref: 'e816e0e587'
 
 # To fix a Draper deprecation error
-gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+# gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 
 
 group :development, :test do

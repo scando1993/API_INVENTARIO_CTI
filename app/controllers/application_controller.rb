@@ -11,6 +11,23 @@ class ApplicationController < ActionController::API
 
   rescue_from VersionCake::UnsupportedVersionError, :with => :render_unsupported_version
 
+  respond_to :json, :xml, :bson, :plist
+
+  def render(*options)
+    self.status = 200
+    self.content_type = 'application/json'
+    # body = Oj.dump(options[:json], mode: :compat)
+
+      body = Rabl.render(options[0],options[1],:view_paths => '/app/views',:format => :json)
+    self.headers['Content-Length'] = body.bytesize.to_s
+    self.response_body = body
+  end
+
+  def respond_with_handler
+    handler = params[:old] ? :old : :fast
+    render params[:action], handlers: handler
+  end
+
   private
 
   def user_not_authorized
@@ -26,4 +43,6 @@ class ApplicationController < ActionController::API
       format.json { render json: {message: "You requested an unsupported version (#{requested_version})"}, status: :unprocessable_entity }
     end
   end
+
+  ActiveSupport.run_load_hooks(:action_controller, self)
 end

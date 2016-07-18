@@ -5,3 +5,4 @@
 
 Mime::Type.register 'application/hal+json', :hal
 Mime::Type.register 'application/vnd.api+json', :json_api
+Mime::Type.register "application/bson", :bson
