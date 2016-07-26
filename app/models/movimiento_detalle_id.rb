@@ -1,0 +1,2 @@
+class MovimientoDetalleId < ApplicationRecord
+end

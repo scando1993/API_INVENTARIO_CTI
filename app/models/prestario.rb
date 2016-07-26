@@ -1,0 +1,2 @@
+class Prestario < ApplicationRecord
+end
