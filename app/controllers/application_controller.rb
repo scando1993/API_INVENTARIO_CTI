@@ -13,15 +13,15 @@ class ApplicationController < ActionController::API
 
   respond_to :json, :xml, :bson, :plist
 
-  def render(*options)
-    self.status = 200
-    self.content_type = 'application/json'
-    # body = Oj.dump(options[:json], mode: :compat)
-
-      body = Rabl.render(options[0],options[1],:view_paths => '/app/views',:format => :json)
-    self.headers['Content-Length'] = body.bytesize.to_s
-    self.response_body = body
-  end
+  # def render(*options)
+  #   self.status = 200
+  #   self.content_type = 'application/json'
+  #   # body = Oj.dump(options[:json], mode: :compat)
+  #
+  #     body = Rabl.render(options[0],options[1],:view_paths => '/app/views',:format => :json)
+  #   self.headers['Content-Length'] = body.bytesize.to_s
+  #   self.response_body = body
+  # end
 
   def respond_with_handler
     handler = params[:old] ? :old : :fast

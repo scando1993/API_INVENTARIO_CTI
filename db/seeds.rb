@@ -11,13 +11,14 @@ Kit.destroy_all
 User.destroy_all
 
 100.times do |i|
-	Person.create!({firstname: Faker::Name.first_name,
+	person = Person.create!({firstname: Faker::Name.first_name,
 	                      lastname: Faker::Name.last_name,
 												email: Faker::Internet.email,
 												function: "function-#{i+1}",
 												phone: Faker::PhoneNumber.phone_number,
 												gender: ["Male","Female"].sample(),
-												cellphone: Faker::PhoneNumber.cell_phone
+												cellphone: Faker::PhoneNumber.cell_phone,
+  											user: User.create!(email: Faker::Internet.email, password: Faker::Internet.password,confirmed_at:Date.today)
 	             }		)
 
 	item_type = ["elemento","dispositivo"].sample()
@@ -57,15 +58,15 @@ items = Item.all
 kits = Kit.all
 
 Faker::Number.between(10,20).to_i.times{
-  Faker::Number.number(1).to_i.times{ |i|
-    kit = kits.sample
-    kit.kit_comments.create!( comments:Faker::Hipster.sentence)
-    #kit.items<<items.sample
-    KitItem.create!( kit:kit, item: items.sample, quantity: Faker::Number.number(1).to_i)
-    KitComponent.create!( kit:kit, kitComponent: kits.sample, quantity: Faker::Number.number(1).to_i)
-    kit.owners<<owners.sample
-    kit.save!
-  }
+  # Faker::Number.number(1).to_i.times{ |i|
+  #   kit = kits.sample
+  #   kit.kit_comments.create!( comments:Faker::Hipster.sentence)
+  #   #kit.items<<items.sample
+  #   KitItem.create!( kit:kit, item: items.sample, quantity: Faker::Number.number(1).to_i)
+  #   KitComponent.create!( kit:kit, kitComponent: kits.sample, quantity: Faker::Number.number(1).to_i)
+  #   kit.owners<<owners.sample
+  #   kit.save!
+  # }
   Faker::Number.number(1).to_i.times{|i|
     item = items.sample
     ItemComponent.create!( item:item,item_component:items.sample, quantity: Faker::Number.number(1).to_i )

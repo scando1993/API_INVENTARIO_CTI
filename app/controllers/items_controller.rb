@@ -7,8 +7,8 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    # respond_with @items
-    render @items ,'items/index', status: :ok, formats: :json
+    respond_with @items
+    # render @items ,'items/index', status: :ok, formats: :json
     # render 'items/index'
     # respond_with_handler
   end

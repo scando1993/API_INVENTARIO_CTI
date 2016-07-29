@@ -1,15 +1,26 @@
 class PeopleController < ApplicationController
   before_action :set_person, only: [:show, :update, :destroy]
+  # before_action :authenticate_user!
+
+  respond_to :json, :xml
 
   # GET /people
   # GET /people.json
   def index
     @people = Person.all
+    if(params[:users])
+      @users = User.all
+      respond_with @users
+    end
+
+
   end
 
   # GET /people/1
   # GET /people/1.json
   def show
+    @person = Person.find_by(params[:id])
+    respond_with @person
   end
 
   # POST /people
