@@ -1,0 +1,2 @@
+class Ingress < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ItemIdentification < ApplicationRecord
+end
