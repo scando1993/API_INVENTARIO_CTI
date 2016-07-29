@@ -1,4 +1,4 @@
-module ItemRepresenter
-  include Roar::JSON
-  
-end
+# module ItemRepresenter
+#   include Roar::JSON
+#
+# end
