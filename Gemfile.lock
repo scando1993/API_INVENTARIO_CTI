@@ -221,7 +221,7 @@ GEM
     orm_adapter (0.5.0)
     pkg-config (1.1.7)
     plist (3.2.0)
-    puma (3.4.0)
+    puma (3.12.2)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
     rabl (0.12.0)
